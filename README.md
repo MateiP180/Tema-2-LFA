@@ -13,7 +13,7 @@ Acest proiect citește expresii regulate dintr-un fișier JSON, le convertește 
     ]
       } 
  ``` 
-Execuția programului:
+## Execuția programului:
 - Expresia regulată de intrare este mai întâi transformată în notație postfix (forma poloneză).
 - Fiecare componentă a expresiei regulate este transformată într-un NFA și combinată folosind operațiile respective (concatenare, uniune, etc.).
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
