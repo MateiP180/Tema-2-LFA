@@ -1,5 +1,6 @@
 Acest proiect citește expresii regulate dintr-un fișier JSON, le convertește în Automate Finiți Nedeterministe (NFA) și verifică dacă un set de șiruri de caractere sunt acceptate de NFA-ul generat. Procesul implică conversia expresiei regulate în notație postfix, construirea unui NFA pentru fiecare expresie și simularea NFA-ului pentru a valida dacă șirurile de intrare sunt acceptate.
-Forma unui test din fișierul JSON este următoarea: 
+
+    Forma unui test din fișierul JSON este următoarea: 
 {
     "name": "R2",
     "regex": "(ab)*",
@@ -7,6 +8,7 @@ Forma unui test din fișierul JSON este următoarea:
       { "input": string, "expected": "true/false" },
 ]
   }
+  
 Execuția programului:
 - Expresia regulată de intrare este mai întâi transformată în notație postfix (Notare Poloneză Inversă).
 - Fiecare componentă a expresiei regulate este transformată într-un NFA și combinată folosind operațiile respective (concatenare, uniune, etc.).
