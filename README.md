@@ -18,15 +18,15 @@ Acest proiect citește expresii regulate dintr-un fișier JSON, le convertește 
 - Construire lambda-NFA:
 Se construiesc automat NFA-uri pentru simboluri și se combină folosind:
 
-    - . (concat) → concat(nfa1, nfa2)
+    - concatenarea → concat(nfa1, nfa2)
 
-    - | (alternare) → OR(nfa1, nfa2)
+    - alternarea → OR(nfa1, nfa2)
     
-    - * (zero sau mai multe repetări) → star(nfa)
+    - zero sau mai multe repetări → star(nfa)
     
-    - + (una sau mai multe repetări) → plus(nfa)
+    - una sau mai multe repetări → plus(nfa)
     
-    - ? (prezență opțională) → question(nfa)
+    - prezență opțională → question(nfa)
 
 
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
