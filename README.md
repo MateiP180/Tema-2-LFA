@@ -31,5 +31,23 @@ Se construiesc automat NFA-uri pentru simboluri și se combină folosind:
 
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
 
-Scriptul se rulează direct prin comanda python 3. Acesta va procesa expresiile regulate și șirurile de test, afișând dacă fiecare șir corespunde rezultatului așteptat.
+## Rularea programului
+
+Scriptul se rulează direct prin următoarea comandă:
+```
+python3 tema.py
+```
+Outputul va indica pentru fiecare test dacă rezultatul este cel așteptat:
+```
+R2: (ab)*
+The result is the expected result
+The result is the expected result
+The result is not the expected result
+```
+La final, dacă toate testele au trecut, va fi afișat următorul mesaj:
+```
+The result is the expected result
+```
+
+
 
