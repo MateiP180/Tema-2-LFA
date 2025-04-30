@@ -15,7 +15,20 @@ Acest proiect citește expresii regulate dintr-un fișier JSON, le convertește 
  ``` 
 ## Execuția programului:
 - Expresia regulată de intrare este mai întâi transformată în notație postfix (forma poloneză).
-- Fiecare componentă a expresiei regulate este transformată într-un NFA și combinată folosind operațiile respective: concatenarea reprezentată de funcția concat, alternarea reprezentată de funcția OR, stelarea reprezentată de funcția star, repetiția cel puțin o dată notată prin semnul plus și reprezentată de funcția star și prezența opțională reprezentată de functia question.
+- Construire lambda-NFA:
+Se construiesc automat NFA-uri pentru simboluri și se combină folosind:
+
+. (concat) → concat(nfa1, nfa2)
+
+| (alternare) → OR(nfa1, nfa2)
+
+* (zero sau mai multe repetări) → star(nfa)
+
++ (una sau mai multe repetări) → plus(nfa)
+
+? (prezență opțională) → question(nfa)
+
+
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
 
 Scriptul se rulează direct prin comanda python 3. Acesta va procesa expresiile regulate și șirurile de test, afișând dacă fiecare șir corespunde rezultatului așteptat.
