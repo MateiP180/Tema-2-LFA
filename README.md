@@ -26,7 +26,7 @@ Se construiesc automat NFA-uri pentru simboluri și se combină folosind:
     
     - + (una sau mai multe repetări) → plus(nfa)
     
-    -? (prezență opțională) → question(nfa)
+    - ? (prezență opțională) → question(nfa)
 
 
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
