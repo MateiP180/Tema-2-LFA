@@ -30,6 +30,7 @@ Se construiesc automat NFA-uri pentru simboluri și se combină folosind:
 
 
 - Pentru fiecare șir de intrare, simularea NFA-ului este rulată, iar rezultatul este comparat cu valoarea așteptată.
+- Această idee funcționează deoarece se bazează pe echivalența dovedită dintre expresiile regulate și automate finite nedeterministe (NFA). Orice limbaj descris printr-o expresie regulată poate fi recunoscut de un NFA, iar orice NFA poate fi construit pentru a simula comportamentul unei expresii regulate. Prin transformarea expresiei într-o formă postfixată, putem construi recursiv un NFA pentru fiecare operator (concat, alternare, stea, plus, opțional) și combina automatul final. Apoi, simularea NFA-ului, care include și explorarea tuturor tranzițiilor lambda, permite verificarea completă a tuturor căilor posibile prin care un șir poate fi acceptat. Acest mecanism este corect din punct de vedere teoretic și reflectă fidel regulile limbajelor regulate.
 
 ## Rularea programului
 
