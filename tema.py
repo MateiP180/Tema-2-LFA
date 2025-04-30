@@ -24,7 +24,10 @@ def validstring(Q, Sigma, D, q0, F, cuv):
 
         current_states = next_states
 
-    return any(state in F for state in current_states)
+    for state in current_states:
+        if state in F:
+            return True
+    return False
 
 
 
@@ -54,9 +57,9 @@ def concat(nfa1, nfa2):
 def star(nfa):
 
     n = len(nfa[0])
-    nfa[0].append(n) #se adauga o stare noua
+    nfa[0].append(n)
     nfa[2][(n, "~")] = [nfa[3]]
-    nfa[3] = n #starea noua devine starea initiala
+    nfa[3] = n
     for q in nfa[4]:
         key = (q, "~")
         if key in nfa[2]:
@@ -113,6 +116,8 @@ priority = {
     "." : 2,
     "+" : 3, "*" : 3, "?" : 3
 }
+
+nrgood = 0 
 
 for test in infile:
     print(test["name"] + ": ", end="")
@@ -188,8 +193,17 @@ for test in infile:
     q0 = nfa[3]
     F = nfa[4] 
 
+
+ 
     for word in test["test_strings"]:
         if validstring(Q, Sigma, D, q0, F, word["input"]) == word["expected"]:
             print("The result is the expected result", end="\n")
+            nrgood += 1
+            
         else:
             print("The result is not the expected result", end="\n")
+
+if nrgood == 86:
+    print("Everything worked as expected")
+else:
+    print(nrgood)
